@@ -32406,7 +32406,7 @@ function Form(_ref) {
     autoFocus: true,
     id: "nftmedialink",
     required: true
-  })), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", {
+  })), /*#__PURE__*/_react.default.createElement("p", null, "* sample media link: https://bafkreihf3u3np4ljyqmsds7i6devqutbvamrzmzx6lsv262leiewz4bxoa.ipfs.nftstorage.link/"), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "donation"
   }, "Deposite (at lease 0.1 N) :"), /*#__PURE__*/_react.default.createElement("input", {
     autoComplete: "off",
@@ -50201,7 +50201,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58779" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58825" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

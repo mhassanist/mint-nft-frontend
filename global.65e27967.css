@@ -34,8 +34,9 @@ html ::selection {
 }
 
 body {
-  max-width: max-content;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 50em;
 }
 
 fieldset {
