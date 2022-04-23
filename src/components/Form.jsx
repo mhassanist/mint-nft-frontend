@@ -6,7 +6,7 @@ export default function Form({ onSubmit, currentUser }) {
   return (
     <form onSubmit={onSubmit}>
       <fieldset id="fieldset">
-        <p>Paste NFT link and hit Sign, {currentUser.accountId}!</p>
+        <p>Enter NFT information and hit Mint, {currentUser.accountId}!</p>
 
         <p className="highlight">
           <label htmlFor="message">NFT Title:</label>
@@ -21,6 +21,10 @@ export default function Form({ onSubmit, currentUser }) {
         <p className="highlight">
           <label htmlFor="message">Media Link:</label>
           <input autoComplete="off" autoFocus id="nftmedialink" required />
+        </p>
+        <p>
+          * sample media link:
+          https://bafkreihf3u3np4ljyqmsds7i6devqutbvamrzmzx6lsv262leiewz4bxoa.ipfs.nftstorage.link/
         </p>
 
         <p>

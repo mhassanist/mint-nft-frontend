@@ -35,6 +35,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // TODO: optimistically update page with new message,
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
+    console.log("Receiver: ", currentUser.accountId)
     contract
       .nft_mint(
         {
@@ -64,7 +65,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         contractId: nearConfig.contractName,
         methodNames: [contract.nft_mint.name],
       }, //contract requesting access
-      "Mhassanist NFTizer", //optional name
+      "NFTizer", //optional name
       null, //optional URL to redirect to if the sign in was successful
       null //optional URL to redirect to if the sign in was NOT successful
     )
@@ -77,20 +78,23 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
   return (
     <main>
+      <div id="logo">
+        <img src={require("./assets/giphy.gif")} width="48" height="48"></img>
+      </div>
       <header>
-        <h1>Mhassanist NFTizer</h1>
+        <h1 display="block">NFTizer - Mint your NFTs</h1>
         {currentUser ? (
           <button onClick={signOut}>Log out</button>
         ) : (
           <button onClick={signIn}>Log in</button>
         )}
       </header>
+
       {currentUser ? (
         <Form onSubmit={onSubmit} currentUser={currentUser} />
       ) : (
         <SignIn />
       )}
-      {!!currentUser && !!messages.length && <Messages messages={messages} />}
     </main>
   )
 }

@@ -3,12 +3,12 @@
 }
 
 html {
-  --bg: rgb(232, 237, 255);
-  --fg: #25282a;
-  --gray: rgb(51, 51, 51);
+  --bg: rgb(255, 255, 255);
+  --fg: #000000;
+  --gray: rgb(90, 90, 90);
   --royal: #0a63a2;
-  --blue: #025a69;
-  --primary: #1a7475;
+  --blue: rgb(0, 114, 206);
+  --primary: rgb(0, 114, 206);
   --secondary: var(--royal);
   --tertiary: #ff585d;
 
@@ -37,8 +37,9 @@ html {
 }
 
 body {
-  max-width: max-content;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 40em;
 }
 
 fieldset {
@@ -125,4 +126,10 @@ button {
   border-left: 0.25em solid var(--secondary);
   padding-left: 0.25em;
   margin-left: -0.5em;
+}
+header {
+  text-align: center;
+}
+#logo {
+  text-align: center;
 }
