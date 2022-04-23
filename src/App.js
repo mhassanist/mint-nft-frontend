@@ -13,11 +13,6 @@ const BOATLOAD_OF_GAS = Big(3)
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([])
 
-  useEffect(() => {
-    // TODO: don't just fetch once; subscribe!
-    //contract.getMessages().then(setMessages)
-  }, [])
-
   const onSubmit = (e) => {
     e.preventDefault()
     console.log(contract)
@@ -32,9 +27,6 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
     fieldset.disabled = true
 
-    // TODO: optimistically update page with new message,
-    // update blockchain data in background
-    // add uuid to each message, so we know which one is already known
     console.log("Receiver: ", currentUser.accountId)
     contract
       .nft_mint(
