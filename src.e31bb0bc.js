@@ -33344,6 +33344,7 @@ const App = _ref => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
 
+    console.log("Receiver: ", currentUser.accountId);
     contract.nft_mint({
       token_id: (0, _uuid.v4)(),
       receiver_id: currentUser.accountId,
@@ -33375,11 +33376,13 @@ const App = _ref => {
     window.location.replace(window.location.origin + window.location.pathname);
   };
 
-  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement("div", {
+    id: "logo"
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: require("./assets/giphy.gif"),
     width: "48",
     height: "48"
-  }), /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", {
+  })), /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", {
     display: "block"
   }, "NFTizer - Mint your NFTs"), currentUser ? /*#__PURE__*/_react.default.createElement("button", {
     onClick: signOut
@@ -50201,7 +50204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58825" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62788" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

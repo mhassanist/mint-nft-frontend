@@ -36,7 +36,7 @@ html ::selection {
 body {
   margin: 0 auto;
   padding: 0 1em;
-  max-width: 50em;
+  max-width: 40em;
 }
 
 fieldset {
@@ -121,6 +121,14 @@ button:active {
   border-left: 0.25em solid var(--secondary);
   padding-left: 0.25em;
   margin-left: -0.5em;
+}
+
+header {
+  text-align: center;
+}
+
+#logo {
+  text-align: center;
 }
 
 /*# sourceMappingURL=/global.65e27967.css.map */
