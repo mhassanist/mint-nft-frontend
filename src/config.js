@@ -1,4 +1,4 @@
-const CONTRACT_NAME = "nftizer.mhassanist.testnet"
+const CONTRACT_NAME = "nft-ukraine.msaudi.testnet"
 
 function getConfig(env) {
   switch (env) {

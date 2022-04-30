@@ -28,6 +28,10 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     fieldset.disabled = true
 
     console.log("Receiver: ", currentUser.accountId)
+    console.log("Receiver: ", nfttitle.value)
+    console.log("Receiver: ", nftdescription.value)
+    console.log("Receiver: ", nftmedialink.value)
+    console.log("Receiver: ", donation.value)
     contract
       .nft_mint(
         {
@@ -41,13 +45,17 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
           },
         },
         BOATLOAD_OF_GAS,
-        Big(donation.value || "0")
+        Big(donation.value)
           .times(10 ** 24)
           .toFixed()
       )
+      .catch((e) => {
+        console.log(e)
+      })
       .then(() => {
-        nfttitle.value = "done"
-        console.log("done")
+        alert(
+          "Thanks for your support!. The NFT is minted and can be found in your wallet's collection tab."
+        )
       })
   }
 
@@ -57,7 +65,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         contractId: nearConfig.contractName,
         methodNames: [contract.nft_mint.name],
       }, //contract requesting access
-      "NFTizer", //optional name
+      "UkraineZoo", //optional name
       null, //optional URL to redirect to if the sign in was successful
       null //optional URL to redirect to if the sign in was NOT successful
     )
@@ -70,22 +78,24 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
   return (
     <main>
-      <div id="logo">
-        <img src={require("./assets/giphy.gif")} width="48" height="48"></img>
-      </div>
       <header>
-        <h1 display="block">NFTizer - Mint your NFTs</h1>
         {currentUser ? (
           <button onClick={signOut}>Log out</button>
         ) : (
           <button onClick={signIn}>Log in</button>
         )}
+        <h1 display="block">Support Ukraine Zoo!</h1>
       </header>
 
       {currentUser ? (
         <Form onSubmit={onSubmit} currentUser={currentUser} />
       ) : (
         <SignIn />
+      )}
+      {currentUser ? (
+        <div></div>
+      ) : (
+        <button onClick={signIn}>Log in | Support</button>
       )}
     </main>
   )
